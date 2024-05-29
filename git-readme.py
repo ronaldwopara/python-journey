@@ -29,15 +29,15 @@ def get_content(repo, url, token, indent_lvl=0):
 
 repo = ""
 username = ""
-url = f"https://api.github.com/repos/{username}/{repo}/contents/"
 token = ""
-content = get_content(repo, token, url)
+url = f"https://api.github.com/repos/{username}/{repo}/contents/"
+content = get_content(repo, url, token)
 
 prompt = f"""
 
 **Title:** README File Creation
 
-**Description:** Your task is to create a README file in markdown for a GitHub repository. The README file should provide essential information about the repository, including its purpose, contents, installation instructions, usage guidelines, and any other relevant details.
+**Description:** Your task is to create a README file in markdown for a GitHub repository. I repeat in markdown. The README file should provide essential information about the repository, including its purpose, contents, installation instructions, usage guidelines, and any other relevant details.
 
 the name of the repository is {repo}
 
@@ -50,11 +50,13 @@ the name of the repository is {repo}
 5. Explain how to use or run the project. Provide examples, command-line instructions, or usage scenarios.
 6. Optionally, include additional sections such as troubleshooting tips, contribution guidelines, license information, or acknowledgments.
 7. Make sure to format your README file for clarity and readability. Use headings, lists, code blocks, and formatting as appropriate.
+8. Dont render the README file that youve made, just output it in raw mardown without rendering
+9. I repeat, Dont render the README file that youve made, just output it in raw mardown code without rendering. When you render the markdown i am unable to copy it directly, so dont render it.
 
 **Example:**
 
 ```
-Title: Project X - README
+README - Project X
 
 Description:
 Welcome to Project X! This repository contains the source code and resources for an exciting new project aimed at revolutionizing the world of AI-driven chatbots.
@@ -83,9 +85,48 @@ We welcome contributions from the community! If you'd like to contribute to Proj
 License:
 Project X is licensed under the MIT License. See the LICENSE file for details.
 
-```
 
-Feel free to customize the prompt further based on your specific requirements or preferences! Let me know if you need any more assistance.
+
+
+**example 2**
+# README - Magic 8-Ball and Shipping Calculator
+
+## Introduction
+Welcome to the Magic 8-Ball and Shipping Calculator repository! This repository contains two Python scripts: one for a Magic 8-Ball game and another for a simple shipping calculator. These scripts are designed to provide fun and utility, respectively, in Python programming.
+
+## Contents
+- **magic-8ball.py**: Python script for playing the Magic 8-Ball game.
+- **shipping.py**: Python script for calculating shipping costs.
+
+## Installation
+To use the scripts in this repository, follow these steps:
+1. Clone the repository: `git clone https://github.com/your-username/magic-8ball-shipping-calculator.git`
+2. Navigate to the project directory: `cd magic-8ball-shipping-calculator`
+
+## Usage
+### Magic 8-Ball
+1. Open a terminal or command prompt.
+2. Navigate to the directory containing `magic-8ball.py`.
+3. Run the script using Python: `python magic-8ball.py`.
+4. Follow the prompts to ask the Magic 8-Ball a question and receive an answer.
+
+### Shipping Calculator
+1. Open a terminal or command prompt.
+2. Navigate to the directory containing `shipping.py`.
+3. Run the script using Python: `python shipping.py`.
+4. Follow the prompts to enter package dimensions and shipping information.
+5. The script will calculate the shipping cost based on the provided information.
+
+## Contribution
+Contributions to this repository are welcome! If you'd like to contribute, please follow these guidelines:
+- Fork the repository and create a new branch for your feature or bug fix.
+- Make your changes and submit a pull request with a clear description of your changes.
+- Be sure to test your changes thoroughly.
+
+## License
+This repository is licensed under the MIT License. See the LICENSE file for details.
+
+Note: Let your output only be in markdown, to make copying easier
 
 Content Of The repo 
 
