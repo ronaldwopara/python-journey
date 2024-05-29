@@ -29,8 +29,8 @@ def get_content(repo, url, token, indent_lvl=0):
 
 repo = "python-lessons"
 url = f"https://api.github.com/repos/ronaldwopara/{repo}/contents/"
-content = get_content(repo, url, "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"
-)
+token = ""
+content = get_content(repo, url, "")
 
 prompt = f"""Sure! Here's a prompt for a chatbot to create a README file:
 
