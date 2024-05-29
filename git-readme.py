@@ -57,33 +57,33 @@ the name of the repository is {repo}
 **Example:**
 
 ```
-README - Project X
+## README - Project X
 
-Description:
+ ## Description:
 Welcome to Project X! This repository contains the source code and resources for an exciting new project aimed at revolutionizing the world of AI-driven chatbots.
 
-Contents:
+ ## Contents:
 - main.py: Python script for running the chatbot engine.
 - data/: Directory containing training data and pre-trained models.
 - README.md: This file providing essential information about the project.
 
-Installation:
+ ## Installation:
 To set up Project X on your local machine, follow these steps:
 1. Clone the repository: git clone https://github.com/your-username/project-x.git
 2. Navigate to the project directory: cd project-x
 3. Install dependencies: pip install -r requirements.txt
 
-Usage:
+ ## Usage:
 To run Project X, execute the following command:
 python main.py
 
-Contributing:
+ ## Contributing:
 We welcome contributions from the community! If you'd like to contribute to Project X, please follow these guidelines:
 - Fork the repository and create a new branch for your feature or bug fix.
 - Make your changes and submit a pull request with a clear description of your changes.
 - Be sure to test your changes thoroughly and adhere to our coding standards.
 
-License:
+ ## License:
 Project X is licensed under the MIT License. See the LICENSE file for details.
 
 
