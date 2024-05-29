@@ -27,9 +27,9 @@ def get_content(repo, url, token, indent_lvl=0):
  prompt += directory_structure + base_files
  return prompt
 # Enter your information
-repo = "keras"
-username = "ronaldwopara"
-token = "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"
+repo = ""
+username = ""
+token = ""
 url = f"https://api.github.com/repos/{username}/{repo}/contents/"
 content = get_content(repo, url, token)
 
