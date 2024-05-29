@@ -27,8 +27,9 @@ def get_content(repo, url, token, indent_lvl=0):
  prompt += directory_structure + base_files
  return prompt
 
-repo = "python-lessons"
-url = f"https://api.github.com/repos/ronaldwopara/{repo}/contents/"
+repo = ""
+username = ""
+url = f"https://api.github.com/repos/{username}/{repo}/contents/"
 token = ""
 content = get_content(repo, url, "")
 
