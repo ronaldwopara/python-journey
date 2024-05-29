@@ -4,28 +4,29 @@ import requests
 
 
 def get_content(repo, url, token, indent_lvl=0):
- prompt = ""  # The final prompt for the chatbot
- headers = {"Authorization": f"token {token}"}
+    prompt = ""  # The final prompt for the chatbot
+    headers = {"Authorization": f"token {token}"}
 
- response = requests.get(url, headers=headers)
- contents = response.json()
+    response = requests.get(url, headers=headers)
+    contents = response.json()
 
- base_files = ""
- directory_structure = ""
+    base_files = ""
+    directory_structure = ""
 
- # Structuring the prompt
- for item in contents:
-   indent = " " * (indent_lvl * 2)  # Indentation for nested directories
+    # Structuring the prompt
+    for item in contents:
+        indent = " " * (indent_lvl * 2)  # Indentation for nested directories
 
-   if item["type"] == "file":
-    base_files += f"{indent} File: {item['name']}\n \n \n"
+        if item["type"] == "file":
+            base_files += f"{indent} File: {item['name']}\n \n \n"
 
-   elif item["type"] == "dir":
-    directory_structure += f"{indent} Directory: {item['name']}\n \n \n"
-    directory_structure += get_content(repo, item["url"], token, indent_lvl + 1)  # Recursively call the function to get the files and directories inside other directories
- 
- prompt += directory_structure + base_files
- return prompt
+        elif item["type"] == "dir":
+            directory_structure += f"{indent} Directory: {item['name']}\n \n \n"
+            directory_structure += get_content(repo, item["url"], token, indent_lvl + 1)  # Recursively call the function to get the files and directories inside other directories
+
+    prompt += directory_structure + base_files
+    return prompt
+
 # Enter your information
 repo = ""
 username = ""
