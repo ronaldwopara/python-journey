@@ -31,11 +31,9 @@ repo = ""
 username = ""
 url = f"https://api.github.com/repos/{username}/{repo}/contents/"
 token = ""
-content = get_content(repo, url, "")
+content = get_content(repo, token, url)
 
-prompt = f"""Sure! Here's a prompt for a chatbot to create a README file:
-
----
+prompt = f"""
 
 **Title:** README File Creation
 
