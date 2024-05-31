@@ -36,7 +36,7 @@ content = get_content(repo, url, token)
 
 prompt = f"""
 
-**Title:** README File Creation
+README File Creation
 
 **Description:** Your task is to create a README file in markdown for a GitHub repository. I repeat in markdown. The README file should provide essential information about the repository, including its purpose, contents, installation instructions, usage guidelines, and any other relevant details.
 
